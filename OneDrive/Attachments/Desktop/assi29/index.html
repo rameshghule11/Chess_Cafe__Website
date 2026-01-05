@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String operations</title>
+
+    <style>
+        body{
+            background-color: #cce6ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .text-center{
+            text-align: center;
+        }
+        
+        .textbox{
+            width: 70%;
+            display: block;
+            margin: 20px auto;
+            min-height: 100px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+       .btn-container{
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+        margin: 20px auto;
+        flex-wrap: wrap;
+       }
+
+       .btn{
+        width: 150px;
+        padding: 8px 15px;
+        font-size: 15px;
+        border-radius: 30px;
+        border: none;
+        background-color: #0084ff;
+        color: #fff;
+        cursor: pointer;
+        margin-top: 20px;
+       }
+    
+       .btn:hover{
+        transition: 0.3s;
+        background-color: #0056b3;
+        box-shadow: 4px 4px 5px 5px #4d4d4d;
+       }
+
+       @media screen and (max-width:500px) {
+
+        .btn-container{
+            
+            justify-content:center;
+        }
+        
+       }
+    </style>
+</head>
+<body>
+
+<h1 class="text-center">💬Text-Operatins💬</h1>
+
+
+<input type="text"
+ id="input"
+ class="textbox"
+  placeholder="😊Enter a text to perform operations">
+
+
+  <input type="text"
+ id="output"
+ class="textbox"
+  placeholder="😊Enter a text to perform operations">
+
+
+  <div class="btn-container">
+    <button type="button" class="btn" onclick="handleUpperCase()">Upper Case</button>
+    <button type="button" class="btn" onclick="handleLowerCase()">Lower Case</button>
+    <button type="button" class="btn" onclick="handleWordCount()" >Word Count</button>
+    <button type="button" class="btn" onclick="handleCharacterCount()">Character Count</button>
+
+  </div>
+
+  <script>
+    const inputElement = document.getElementById('input');
+    const outputElement = document.getElementById('output');
+
+function handleUpperCase(){
+
+outputElement.value = inputElement. value.toUpperCase();
+
+}
+function handleLowerCase(){
+    outputElement.value = inputElement. value.toLowerCase();
+
+}   
+ function handleWordCount(){
+ const totalWords = inputElement.value.split(" ").length;
+
+ outputElement.value = `Word Count: ${totalWords}`;
+    
+ }
+ function handleCharacterCount(){
+    outputElement.value = `Character Count: ${inputElement.value.length}`;
+
+ }
+
+
+  </script>
+</body>
+</html>
